@@ -94,7 +94,6 @@ public class PlatformerMovement : MonoBehaviour
 
     private void updateAnimation()
     {
-        Debug.Log("setting isMoving to: " + isMoving);
         // det skulle kanske vara bättre att hasha strängen, men detta får räcka...
         gameobjectAnimator.SetBool("isMoving", isMoving);
     }
@@ -180,7 +179,6 @@ public class PlatformerMovement : MonoBehaviour
     {
         if (context.started && controlEnabled)
         {
-            Debug.Log("Jump!");
             jumpInput = true;
             jumpReleased = false;
         }
