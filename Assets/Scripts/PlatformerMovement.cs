@@ -30,11 +30,14 @@ public class PlatformerMovement : MonoBehaviour
     private bool jumpReleased;
     private bool wasGrounded;
     private bool isGrounded;
+    private bool isMoving;
+    private Animator gameobjectAnimator;
 
     [SerializeField] private Animator animator;
     
     void Awake()
     {
+        gameobjectAnimator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         
         groundCheckCollider = GetComponent<CircleCollider2D>();
@@ -76,6 +79,8 @@ public class PlatformerMovement : MonoBehaviour
             // Has landed, play landing sound and trigger landing animation
         }
         wasGrounded = isGrounded;
+        // animeringar
+        updateAnimation();
         
         // Flip sprite according to direction (if a sprite renderer has been assigned)
         if (spriteRenderer)
@@ -85,6 +90,13 @@ public class PlatformerMovement : MonoBehaviour
             else if (moveInput.x < -0.01f)
                 spriteRenderer.flipX = true;
         }
+    }
+
+    private void updateAnimation()
+    {
+        Debug.Log("setting isMoving to: " + isMoving);
+        // det skulle kanske vara bättre att hasha strängen, men detta får räcka...
+        gameobjectAnimator.SetBool("isMoving", isMoving);
     }
 
     private void FixedUpdate()
@@ -152,6 +164,9 @@ public class PlatformerMovement : MonoBehaviour
         if (controlEnabled)
         {
             moveInput = context.ReadValue<Vector2>().normalized;
+            if (context.started) isMoving = true;
+            if (context.canceled) isMoving = false;
+            
         }
         else
         {
