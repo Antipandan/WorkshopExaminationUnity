@@ -284,11 +284,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 028054a7db0ff3b40be50a84dac942ab, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -397,6 +397,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 8327456709618745999, guid: 38d140cb143686941a37bc34b07df310, type: 3}
+    - target: {fileID: 5670822428861683086, guid: e1a3626446258f841927c28a5d24595d, type: 3}
+      propertyPath: m_Radius
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670822428861683086, guid: e1a3626446258f841927c28a5d24595d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.66
+      objectReference: {fileID: 0}
     - target: {fileID: 5999719591790779751, guid: e1a3626446258f841927c28a5d24595d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.17
@@ -447,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9067471356065261438, guid: e1a3626446258f841927c28a5d24595d, type: 3}
       propertyPath: m_Size.y
-      value: 2.42
+      value: 1.79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
